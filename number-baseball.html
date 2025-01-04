@@ -73,18 +73,28 @@
             let strike = 0;
             let ball = 0;
             //answer : 3146, value : 1234
-            for (let i = 0; i < answer.length; i++) {
-                const index = value.indexOf(answer[i])
-                //일치하는 숫자 발견
+            answer.forEach((element, i) => {
+                const index = value.indexOf(element);
                 if (index > -1) {
-                    if (index === i) {//자릿수도 같은 경우 : strike
-                        strike += 1;
-                    } else {//숫자만 같은경우 :ball
-                        ball += 1;
+                    if (index === i) {
+                        strike++;
+                    } else {
+                        ball++;
                     }
-
                 }
-            }
+            })
+            // for (let i = 0; i < answer.length; i++) {
+            //     const index = value.indexOf(answer[i])
+            //     //일치하는 숫자 발견
+            //     if (index > -1) {
+            //         if (index === i) {//자릿수도 같은 경우 : strike
+            //             strike += 1;
+            //         } else {//숫자만 같은경우 :ball
+            //             ball += 1;
+            //         }
+
+            //     }
+            // }
 
             if (ball === 0 && strike === 0) {
                 out++;
